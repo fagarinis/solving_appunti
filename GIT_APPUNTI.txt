@@ -1,0 +1,55 @@
+#############################Git#####################################################
+È un sistema di versionamento Tiene traccia delle modifiche delle app, per lavorare in team
+I file su git si organizzano in
+
+•	Working area-> versione su cui stiamo lavorando
+•	Staging area ->  area intermedia dove mettere le modifiche che persisteranno
+•	Index -> si esegue il commit(con un codice univoco) e si sposta sull’indice, 
+a questo punto il file è versionato
+
+Git permette di interrogare su chi ha fatto quale modifica
+Ogni commit è un oggetto con un numero su git che si collega al commit precedente fino 
+alla versione iniziale. L’ultimo commit è l’head della repository.
+Git è un sistema di versionamento distribuito: ogni persoona che ha il repository 
+ha una copia completa di tutto il repository
+Fornisce anche la gestione dei conflitti, se due fanno modifiche su cose simili, 
+git lo risolve automatico o blocca tutto.
+
+Github -> si possono avere n repository pubblic ma solo 5 private, si paga per avere più progetti privati
+Bitbucket -> si possono avere n repository private ma si paga per avere piu collaboratori
+
+##########################Branching###################################################
+All’interno di un repository all’interno di qualsisi commit è possibile cominciare a 
+lavorare in parallelo alla base princpale
+
+########################Merge (fusione)###############################################
+Rami che hanno lavorato in parallelo si riconvertono in uno solo attraverso un nuovo commit.
+
+##########################Comandi#####################################################
+git status > informazioni sullo stato della repository
+
+i file non tracciati sono automaticamente nella working area
+git add.  Aggiunge tutti  i file  nella directory alla staging area, pronti per essere committati
+git commit -m <messaggio che descrive il commit>  (insertion indica le righe aggiunte.)
+git commit -> apre il file per inserire manualmente il messaggio di commit
+git commit -a ->esegue in contemporanea l’add e il commit di un file nella working area
+git commit 
+git log -> mostra dal più recente tutti i commit
+rm “nome file” rimuove il file dalla staging area
+configurazione per tenere traccia dei commit
+git config –global user.email <email>
+git config –global user.name “nome e cognome”
+git config –global core.editor “vim/notepad” cambia l’editor per i messaggi di commit
+git diff, stampa le differenze di un file gia committato che è stato modificato
+git branch visualizza tutti i branch
+git checkout -b <nomebranch>  con -b crea nuovo brench da dove mi trovo adesso
+git checkout <nomebrench>switch del brench
+git log –graph –all fa vedere tutti i log con i vari branch, all fa vedere i log di tutti i rami, --graph fa una visualizzazione grafica.
+Git remote -> restituisce il puntatore (nome) al repository remoto (avviene solo coi repository clonati, di solito si chiama origin), ce ne potrebbero essere piu di uno.
+Git remote -v -> restituisce l’indirizzo fetch( prendere, pull) e indirizzo push (caricare) del repository remoto.
+Git fetch -> serve a controllare se ci sono modifiche sulla repository e le scarica
+Git pull ->fetch + merge
+Git commit –amend torna indietro se si è sbagliato a scrivere il messaggio di commit a livello locale
+Git rebase -> applica i commit del brench a ogni commit del maste e s enon ci sono conflitti collega il brench all’head del master (è difficile da fare da riga di comando, meglio con i tool grafici)
+Reset-> permette di ritornare a un commit precedente e ricominciare a fare altri commit su un altro branch. Da NON fare perche modifica la history del progetto.
+Revert -> permette di creare un nuovo commit senza le modifiche di alcuni commit precedenti
