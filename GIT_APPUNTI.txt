@@ -29,7 +29,7 @@ Rami che hanno lavorato in parallelo si riconvertono in uno solo attraverso un n
 git status > informazioni sullo stato della repository
 
 i file non tracciati sono automaticamente nella working area
-git add.  Aggiunge tutti  i file  nella directory alla staging area, pronti per essere committati
+git add .  Aggiunge tutti  i file  nella directory alla staging area, pronti per essere committati
 git commit -m <messaggio che descrive il commit>  (insertion indica le righe aggiunte.)
 git commit -> apre il file per inserire manualmente il messaggio di commit
 git commit -a ->esegue in contemporanea l’add e il commit di un file nella working area
