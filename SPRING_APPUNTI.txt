@@ -1,0 +1,26 @@
+###########################SPRING###############################
+Spring usa l’IoC 
+
+IoC = inversion of control è una pratica nella programmazione a oggetti 
+dove l’oggetto viene “assemblato” con i suoi vari collegamenti a runtime da un “oggetto assemblatore” è sinonimo di dependency injection.
+
+#########################Annotazioni comuni#####################
+@Autowired -> spring risolve le dipendenze con questa annotation 
+automaticamente (solitamente li mettiamo nei service e dao)
+
+@Qualifier -> insieme all’autowired specifica il tipo specifico (is-a) della classe field. 
+
+@Component e @Service indicano al container di spring che le classi sono dei bean da inserire nel contesto del container IoC (che contiene tutte le @Autowire)
+che permette di fare i collegamenti a runtime, In particolare:
+	@Service (un soprainsieme di @Component) indica che il componente rappresenta un service. Trasforma l’oggetto in bean quando viene creato.
+	@Component componente generico applicabile a qualsiasi bean. Trasforma l’oggetto in bean quando viene creato.
+
+@Configuration sopra la dichiarazione di una classe che provvede all’implementazione di diversi metodi 
+
+@Bean marchia un metodo factory che istanzia uno spring bean (quando serve crearsi un bean “a buffo”, 
+tutti i metodi annotati con @Bean devono trovarsi in una classe @Configuration
+
+@ComponentScan(“<indirizzo package>”) -> indica il package da scannerizzare per cercare classi con le varie annotazioni
+
+##################SPRING BOOT##################################
+[da finire...]
